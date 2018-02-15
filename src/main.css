@@ -1,0 +1,139 @@
+:root {
+  --specialColor: rgb(198, 120, 221);
+  --fontColorBase: rgb(171, 178, 191);
+  --fontColorLight: rgb(114, 119, 127);
+  --fontColorSelected: rgb(240, 240, 240);
+  --backgroundColorSelected: rgb(58, 63, 75);
+  --fontFamily: "Fira Code", "Menlo", "monospace";
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#zazu > div::before {
+  color: var(--specialColor);
+  content: '\00276F';
+  display: block;
+  font-family: var(--fontFamily);
+  font-size: 20px;
+  margin: 10px 0 0 0;
+  position: absolute;
+}
+
+#zazu {
+  -webkit-app-region: drag;
+  background-color: rgb(33, 37, 43);
+  border-radius: 5px;
+  cursor: move;
+  padding: 15px;
+
+  & input {
+    -webkit-app-region: no-drag;
+    background-color: transparent;
+    border: 0;
+    color: var(--fontColorBase);
+    font-family: var(--fontFamily);
+    font-size: 36px;
+    font-weight: 300;
+    outline: none;
+    padding: 0 0 0 25px;
+    width: calc(100% - 25px);
+
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
+  }
+
+  & div.results {
+    display: flex;
+    flex-direction: row;
+
+    & ul {
+      list-style-type: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      width: 50%;
+
+      &:last-child {
+        width: 100%;
+      }
+
+      & li {
+        -webkit-app-region: no-drag;
+        cursor: pointer;
+        font-family: var(--fontFamily);
+        padding: 10px 8px;
+        transition: background-color 0.2s ease-in-out;
+        width: 100%;
+
+        &:first-of-type {
+          margin: 15px 0 0;
+        }
+
+        &:last-of-type {
+          border-bottom: 0;
+        }
+
+        & .icon {
+          float: left;
+          height: 40px;
+          line-height: 40px;
+          margin: 3px 20px 0 5px;
+          text-align: center;
+          transition: all 0.15s ease-in-out;
+          width: 40px;
+        }
+
+        & .icon.fa {
+          color: #fff;
+          font-size: 30px;
+        }
+
+        & h2,
+        & h3 {
+          font-weight: 400;
+          margin: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        & h2 {
+          color: var(--fontColorBase);
+          font-size: 22px;
+
+          &:last-child {
+            line-height: 48px;
+          }
+        }
+
+        & h3 {
+          color: var(--fontColorLight);
+          font-size: 14px;
+        }
+
+        &.active,
+        &:hover {
+          background-color: var(--backgroundColorSelected);
+
+          & .icon {
+            transform: scale(1.05);
+          }
+
+          & h2 {
+            color: var(--fontColorSelected);
+          }
+        }
+      }
+    }
+  }
+}
+
+#preview {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border: 0;
+}

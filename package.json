@@ -1,0 +1,26 @@
+{
+  "name": "zazu-one-dark-theme",
+  "version": "1.0.0",
+  "description": "A simple dark theme for zazu app inspired by One dark UI and Pure",
+  "main": "dist/main.css",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "postcss src/main.css --use postcss-cssnext --dir dist --map",
+    "watch": "npm run build -- --watch",
+    "lint": "stylelint src/main.css",
+    "test": "npm run lint"
+  },
+  "keywords": [
+    "zazu",
+    "theme"
+  ],
+  "author": "Marco Streng",
+  "devDependencies": {
+    "postcss": "^6.0.17",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.1.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
+  }
+}

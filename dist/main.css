@@ -1,0 +1,140 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#zazu > div::before {
+  color: rgb(198, 120, 221);
+  content: '\00276F';
+  display: block;
+  font-family: "Fira Code", "Menlo", "monospace";
+  font-size: 20px;
+  margin: 10px 0 0 0;
+  position: absolute;
+}
+
+#zazu {
+  -webkit-app-region: drag;
+  background-color: rgb(33, 37, 43);
+  border-radius: 5px;
+  cursor: move;
+  padding: 15px
+}
+
+#zazu input {
+  -webkit-app-region: no-drag;
+  background-color: transparent;
+  border: 0;
+  color: rgb(171, 178, 191);
+  font-family: "Fira Code", "Menlo", "monospace";
+  font-size: 36px;
+  font-weight: 300;
+  outline: none;
+  padding: 0 0 0 25px;
+  width: calc(100% - 25px);
+}
+
+#zazu input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+#zazu div.results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#zazu div.results ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 50%;
+}
+
+#zazu div.results ul:last-child {
+  width: 100%;
+}
+
+#zazu div.results ul li {
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  font-family: "Fira Code", "Menlo", "monospace";
+  padding: 10px 8px;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%;
+}
+
+#zazu div.results ul li:first-of-type {
+  margin: 15px 0 0;
+}
+
+#zazu div.results ul li:last-of-type {
+  border-bottom: 0;
+}
+
+#zazu div.results ul li .icon {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  margin: 3px 20px 0 5px;
+  text-align: center;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  width: 40px;
+}
+
+#zazu div.results ul li .icon.fa {
+  color: #fff;
+  font-size: 30px;
+}
+
+#zazu div.results ul li h2,
+        #zazu div.results ul li h3 {
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#zazu div.results ul li h2 {
+  color: rgb(171, 178, 191);
+  font-size: 22px;
+}
+
+#zazu div.results ul li h2:last-child {
+  line-height: 48px;
+}
+
+#zazu div.results ul li h3 {
+  color: rgb(114, 119, 127);
+  font-size: 14px;
+}
+
+#zazu div.results ul li.active,
+        #zazu div.results ul li:hover {
+  background-color: rgb(58, 63, 75);
+}
+
+#zazu div.results ul li.active .icon, #zazu div.results ul li:hover .icon {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#zazu div.results ul li.active h2, #zazu div.results ul li:hover h2 {
+  color: rgb(240, 240, 240);
+}
+
+#preview {
+  border-left: 1px solid rgba(255, 255, 255, .1);
+  border: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
